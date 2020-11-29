@@ -7,9 +7,28 @@
 
 import SwiftUI
 
+enum Sheet: Identifiable {
+  case info
+  case settings
+  
+  var id: Int {
+    hashValue
+  }
+}
+
+extension Sheet {
+  var modalView: AnyView {
+    switch self {
+    case .info:
+      return AnyView(InfoView())
+    case .settings:
+      return AnyView(SettingsView())
+    }
+  }
+}
+
 struct ContentView: View {
-  @State var showInfoModalView: Bool = false
-  @State var showSettingsModalView: Bool = false
+  @State var activeSheet: Sheet?
   
   var body: some View {
     VStack(spacing: 50) {
@@ -17,23 +36,30 @@ struct ContentView: View {
         .font(.largeTitle)
       
       Button(action: {
-        showInfoModalView = true
+        activeSheet = .info
       }, label: {
         Label("Show Info View", systemImage: "info.circle")
       })
-      .sheet(isPresented: $showInfoModalView) {
-        InfoView()
-      }
       
       Button(action: {
-        showSettingsModalView = true
+        activeSheet = .settings
       }, label: {
         Label("Show Settings View", systemImage: "gear")
       })
-      .sheet(isPresented: $showSettingsModalView) {
+    }
+    .sheet(item: $activeSheet) { sheet in
+      switch sheet {
+      case .info:
+        InfoView()
+      case .settings:
         SettingsView()
       }
     }
+    // approach using computer property on Sheet type
+    // .sheet(item: $activeSheet) { $0.modalView }
+    
+    // approach using computer property on Sheet type via keypath
+    // .sheet(item: $activeSheet, content: \.modalView)
   }
 }
 
