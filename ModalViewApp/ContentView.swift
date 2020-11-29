@@ -17,12 +17,12 @@ enum Sheet: Identifiable {
 }
 
 extension Sheet {
-  var modalView: AnyView {
+  func modalView(with binding: Binding<Sheet?>) -> AnyView {
     switch self {
     case .info:
-      return AnyView(InfoView())
+      return AnyView(InfoView(activeSheet: binding))
     case .settings:
-      return AnyView(SettingsView())
+      return AnyView(SettingsView(activeSheet: binding))
     }
   }
 }
@@ -50,16 +50,14 @@ struct ContentView: View {
     .sheet(item: $activeSheet) { sheet in
       switch sheet {
       case .info:
-        InfoView()
+        InfoView(activeSheet: $activeSheet)
       case .settings:
-        SettingsView()
+        SettingsView(activeSheet: $activeSheet)
       }
     }
-    // approach using computer property on Sheet type
-    // .sheet(item: $activeSheet) { $0.modalView }
     
-    // approach using computer property on Sheet type via keypath
-    // .sheet(item: $activeSheet, content: \.modalView)
+    // Using binding with function on Sheet type
+    // .sheet(item: $activeSheet) { $0.modalView(with: $activeSheet) }
   }
 }
 

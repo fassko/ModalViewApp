@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct SettingsView: View {
+  @Binding var activeSheet: Sheet?
+  
   var body: some View {
-    VStack {
+    VStack(spacing: 50)  {
       Text("Settings View")
         .font(.largeTitle)
+      
+      Button(action: {
+        activeSheet = nil
+      }, label: {
+        Label("Close", systemImage: "xmark.circle")
+      })
     }
   }
 }
 
 struct SettingsView_Previews: PreviewProvider {
   static var previews: some View {
-    SettingsView()
+    SettingsView(activeSheet: Binding(get: { Sheet.settings }, set: { _ in }))
   }
 }
