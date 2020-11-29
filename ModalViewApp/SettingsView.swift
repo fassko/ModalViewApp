@@ -1,5 +1,5 @@
 //
-//  InfoView.swift
+//  SettingsView.swift
 //  ModalViewApp
 //
 //  Created by Kristaps Grinbergs on 29/11/2020.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct InfoView: View {
+struct SettingsView: View {
   var body: some View {
     VStack {
-      Text("Information view")
+      Text("Settings View")
         .font(.largeTitle)
     }
   }
 }
 
-struct InfoView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
   static var previews: some View {
-    InfoView()
+    SettingsView()
   }
 }

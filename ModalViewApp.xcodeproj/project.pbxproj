@@ -12,6 +12,7 @@
 		631D405A2573988B00A48F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631D40592573988B00A48F79 /* Assets.xcassets */; };
 		631D405D2573988B00A48F79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631D405C2573988B00A48F79 /* Preview Assets.xcassets */; };
 		631D4066257398A300A48F79 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631D4065257398A300A48F79 /* InfoView.swift */; };
+		631D40692573ECB500A48F79 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631D40682573ECB500A48F79 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		631D405C2573988B00A48F79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		631D405E2573988B00A48F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631D4065257398A300A48F79 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		631D40682573ECB500A48F79 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				631D40552573988A00A48F79 /* ModalViewAppApp.swift */,
 				631D40572573988A00A48F79 /* ContentView.swift */,
 				631D4065257398A300A48F79 /* InfoView.swift */,
+				631D40682573ECB500A48F79 /* SettingsView.swift */,
 				631D40592573988B00A48F79 /* Assets.xcassets */,
 				631D405E2573988B00A48F79 /* Info.plist */,
 				631D405B2573988B00A48F79 /* Preview Content */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				631D40582573988A00A48F79 /* ContentView.swift in Sources */,
+				631D40692573ECB500A48F79 /* SettingsView.swift in Sources */,
 				631D4066257398A300A48F79 /* InfoView.swift in Sources */,
 				631D40562573988A00A48F79 /* ModalViewAppApp.swift in Sources */,
 			);

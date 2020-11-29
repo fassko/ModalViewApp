@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
   @State var showInfoModalView: Bool = false
+  @State var showSettingsModalView: Bool = false
   
   var body: some View {
     VStack(spacing: 50) {
@@ -20,9 +21,18 @@ struct ContentView: View {
       }, label: {
         Label("Show Info View", systemImage: "info.circle")
       })
-    }
-    .sheet(isPresented: $showInfoModalView) {
-      InfoView()
+      .sheet(isPresented: $showInfoModalView) {
+        InfoView()
+      }
+      
+      Button(action: {
+        showSettingsModalView = true
+      }, label: {
+        Label("Show Settings View", systemImage: "gear")
+      })
+      .sheet(isPresented: $showSettingsModalView) {
+        SettingsView()
+      }
     }
   }
 }
