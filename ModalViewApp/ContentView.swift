@@ -17,12 +17,13 @@ enum Sheet: Identifiable {
 }
 
 extension Sheet {
-  func modalView(with binding: Binding<Sheet?>) -> AnyView {
+  @ViewBuilder
+  func modalView(with binding: Binding<Sheet?>) -> some View {
     switch self {
     case .info:
-      return AnyView(InfoView(activeSheet: binding))
+      InfoView(activeSheet: binding)
     case .settings:
-      return AnyView(SettingsView(activeSheet: binding))
+      SettingsView(activeSheet: binding)
     }
   }
 }
